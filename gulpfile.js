@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 var serverConfig = {
         livereload: true,
         port: 9000,
-        open: true
+        open: true,
         url: 104.236.79.2
     };
 
