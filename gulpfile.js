@@ -17,6 +17,7 @@ var serverConfig = {
         livereload: true,
         port: 9000,
         open: true
+        url: 104.236.79.2
     };
 
 gulp.task('bower', function(){
