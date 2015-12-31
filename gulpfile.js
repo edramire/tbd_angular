@@ -1,4 +1,4 @@
-require ('es6-promise').polyfill();
+var Promise=require ('es6-promise').polyfill();
 var gulp = require('gulp'), 
     bower   = require('gulp-bower'), //ejecuta bower desde gulp
     server  = require('gulp-server-livereload'), //servidor
