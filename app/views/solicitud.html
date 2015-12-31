@@ -1,0 +1,67 @@
+<div ng-app="iServifast" ng-controller="solicitudCtrl">
+<lx-tabs>
+	<lx-tab heading="Solicitud">
+		<div class="p+">	
+			<div class="card" ng-repeat="solicitud in solicitudes" >
+				<div class="p+">
+					<strong class="fs-headline display-block tc-red-900">
+						{{solicitud.titulo}}
+					</strong>
+					<div class="paragraph fs-body-1 mt+">
+						<h1>{{solicitud.descripcion}}</h1>	
+				
+					</div>	
+				</div>
+
+			</div>
+		</div>
+	</lx-tab>
+	<lx-tab heading="Crear Solicitud">
+	<form ng-submit="addPost()">
+    	<div class="mt++ ng-scope" flex-container="row" flex-glutter="24">
+    		<div flex-item>
+				<div class="p+">
+					<div class="card top-space">
+						<div class="p+">
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Titulo">
+									<input type="text" ng-model="form.titulo">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Descripcion">
+									<input type="text" ng-model="form.descripcion">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Precio">
+									<input type="text" ng-model="form.precio">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Duracion">
+									<input type="text" ng-model="form.duracion">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div class="card__actions">
+								<button type="submit" class="btn btn--red btn--l btn--raised">
+								Guardar
+								</button>
+							</div>
+						</div>			
+					</div>
+				</div>
+			</div>
+    	</div>
+	</form>
+	</lx-tab>
+</lx-tabs>
+</div>

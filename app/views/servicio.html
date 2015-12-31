@@ -1,0 +1,71 @@
+<div ng-app="iServifast" ng-controller="servicioCtrl">
+
+<lx-tabs>
+	<lx-tab heading="Servicios">
+		<div class="p+">	
+			<div class="card" ng-repeat="servicio in servicios" >
+				<div class="p+">
+					<strong class="fs-headline display-block tc-red-900">
+						{{servicio.titulo}}
+					</strong>
+					<div class="paragraph fs-body-1 mt+">
+						<h1>{{servicio.descripcion}}</h1>	
+					</div>
+				</div>
+				<div class="card__actions">
+					<a href="#/Servicio/{{servicio.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
+					<a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
+					<a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+				</div>
+			</div>
+		</div>
+	</lx-tab>
+	<lx-tab heading="Crear Servicios">
+	<form ng-submit="addPost()">
+    	<div class="mt++ ng-scope" flex-container="row" flex-glutter="24">
+    		<div flex-item>
+				<div class="p+">
+					<div class="card top-space">
+						<div class="p+">
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Titulo">
+									<input type="text" ng-model="form.titulo">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Descripcion">
+									<input type="text" ng-model="form.descripcion">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Precio">
+									<input type="text" ng-model="form.precio">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Duracion">
+									<input type="text" ng-model="form.duracion">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div class="card__actions">
+								<button type="submit" class="btn btn--red btn--l btn--raised">
+								Guardar
+								</button>
+							</div>
+						</div>			
+					</div>
+				</div>
+			</div>
+    	</div>
+	</form>
+	</lx-tab>
+</lx-tabs>
+</div>

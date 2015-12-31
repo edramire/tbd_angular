@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html ng-app="iServifast">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!-- Recursos de bower-->
+  <!-- build:css css/vendor.css -->   
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Estilos personalizados-->
+  <!-- build:css css/main.css -->  
+  <!-- inject:css -->
+  <link rel="stylesheet" href="styles/lumx.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/materialdesignicons.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.0-beta.5/angular-route.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <!-- Head 
+<link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+<script src="bower_components/velocity/velocity.js"></script>
+<script src="bower_components/moment/min/moment-with-locales.js"></script>
+<script src="/bower_components/lumx/dist/lumx.js"></script>-->
+
+<!-- Before body closing tag -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+
+
+
+
+</head>
+<body ng-app="iServifast">
+<nav>
+  <div class="bgc-red-800 tc-white" flex-container="row" flex-align="center center">
+    <div flex-item="4">
+    <a href="#/home"><img class="logo" style="height:70px  " src="images/logo.png" alt="logo" ></a>
+    </div>
+    <div flex-item="1" ng-hide="">
+      <a href="#/Login">Login</a> 
+    </div>
+    <div flex-item="1">
+      <a href="#/Registro">Registrarse</a>
+    </div>
+    <div flex-item="1">
+      <a href="#/Usuarios/:id">Perfil</a>
+    </div>
+     <div flex-item="1">
+      <a href="#/Servicio">Servicios</a>
+    </div>
+    <div flex-item="1">
+      <a href="#/Solicitud">Solicitudes</a>
+    </div>
+  </div>
+</nav>
+    <div ng-view=""></div>
+</body>
+  <!-- Recursos de bower-->
+  <!-- build:js js/vendor.js --> 
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- Recursos personales-->
+  <!-- build:js js/scripts.js -->   
+  <!-- inject:js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/dirDisqus.js"></script>
+  <script src="scripts/lumx.js"></script>
+  <script src="scripts/controllers/loginCtrl.js"></script>
+  <script src="scripts/controllers/mainCtrl.js"></script>
+  <script src="scripts/controllers/mostraruserCtrl.js"></script>
+  <script src="scripts/controllers/registroCtrl.js"></script>
+  <script src="scripts/controllers/servicioCtrl.js"></script>
+  <script src="scripts/controllers/serviciodetailCtrl.js"></script>
+  <script src="scripts/controllers/solicitudCtrl.js"></script>
+  <script src="scripts/services/servicioSrv.js"></script>
+  <script src="scripts/services/solicitudSrv.js"></script>
+  <script src="scripts/services/usuarioSrv.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
+
+</html>

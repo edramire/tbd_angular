@@ -1,0 +1,88 @@
+<div ng-app="iServifast" ng-controller="registroCtrl">
+    <form ng-submit="addPost()">
+    	<div class="mt++ ng-scope" flex-container="row" flex-glutter="24">
+    		<div flex-item>
+				<div class="p+">
+					<div class="card top-space">
+						<div class="p+">
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Nombre">
+									<input type="text" ng-model="form.nombre">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Apellido">
+									<input type="text" ng-model="form.apellido">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Ciudad">
+									<input type="text" ng-model="form.ciudad">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Comuna">
+									<input type="text" ng-model="form.comuna">
+									</lx-text-field>	
+								</div>
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Direccion">
+									<input type="text" ng-model="form.direccion">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Region">
+									<input type="text" ng-model="form.region">
+									</lx-text-field>	
+								</div>	
+							</div>
+						</div>			
+					</div>
+				</div>
+			</div>
+    		<div flex-item>
+    			<div flex-container="row">
+					<div flex-item>
+						<lx-text-field label="Mail">
+						<input type="text" ng-model="form.mail">
+						</lx-text-field>	
+					</div>	
+				</div>
+				<div flex-container="row">
+					<div flex-item>
+						<lx-text-field label="Password">
+						<input type="password" ng-model="form.password">
+						</lx-text-field>	
+					</div>	
+				</div>
+    			<div flex-container="row">
+					<div flex-item>
+						<lx-text-field label="Nick">
+						<input type="text" ng-model="form.usuario">
+						</lx-text-field>	
+					</div>	
+				</div>
+    			<div class="card__actions">
+					<button type="submit" class="btn btn--red btn--l btn--raised">
+					Guardar
+					</button>
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</form>
+</div>
