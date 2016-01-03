@@ -1,21 +1,19 @@
- angular.module('iServifast').controller('loginCtrl',function($http, $location,$scope){
-	 
-		$scope.login=function(){
-			var $promise=$http({
+(function(){
+    angular.module('iServifast').controller('logCtrl', function($scope, $http,$location){
+      $scope.addLog = function (){
+      $http({
                 method: 'POST',
                 url: 'https://104.236.79.2:8181/Servifast/Usuario/login',
-                data: {"username": $scope.user.usuario,"password":$scope.user.pass},
+                data: {"username": $scope.newUser.usuario,"password":$scope.newUser.password},
                 headers: {'Content-Type': 'application/json'}
         }).success(function(data,status,headers,config){  
               console.log(data);
-
-				if($scope.user.usuario){
-					sessionStorage.setItem('unombre',$scope.user.usuario);
-					$location.path('/home');
-				}	       
-				else  {
-					$location.path('/login');
-				}
+              if (status=="OK"){                
+                  $location.path( "/home" );
+              }
+              else{
+               $location.path( "/login" ); 
+              }
 
             },
             function(error,status,headers,config){
@@ -24,8 +22,8 @@
 
 
             });
-		}
 
-	
-
-});
+        }
+    });
+    
+  } ) ();

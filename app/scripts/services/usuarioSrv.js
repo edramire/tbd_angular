@@ -1,7 +1,7 @@
 angular.module('iServifast')
     .service('usuarioService', function($http,$routeParams){
         this.getUsers = function(){
-            var urlBase = 'https://104.236.79.2:8181/Servifast/Usuario/'+$routeParams.id;
+            var urlBase = 'https://104.236.79.2:8181/Servifast/Usuario/';
             return $http.get(urlBase);
         };
 

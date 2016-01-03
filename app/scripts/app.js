@@ -4,10 +4,10 @@
         $routeProvider
         .when('/home', {
             templateUrl: 'views/home.html',
-            controller: 'mainCtrl'
+            controller:'homeCtrl'
           })
         .when('/Login', {
-            templateUrl:'views/login.html',
+            templateUrl:'views/login2.html',
             controller:'loginCtrl'
         })
         .when('/Usuario/:id', {

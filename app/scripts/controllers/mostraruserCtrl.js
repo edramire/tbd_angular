@@ -5,7 +5,7 @@
         function getUsers(){
             usuarioService.getUsers()
             .success(function(data){
-                $scope.usuario = data;
+                $scope.usuarios = data;
                 console.log(data);
             })
             .error(function(error){
