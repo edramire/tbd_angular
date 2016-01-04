@@ -1,4 +1,4 @@
-var Promise=require ('es6-promise').polyfill();
+
 var gulp = require('gulp'), 
     bower   = require('gulp-bower'),
     server  = require('gulp-server-livereload'), 
@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 var serverConfig = {
         livereload: true,
         port: 9000,
-        open: true,
+        open: true
     };
 
 gulp.task('bower', function(){
