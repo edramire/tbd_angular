@@ -49,8 +49,10 @@
     <div flex-item="1" ng-hide="">
       <a href="#/Login">Login</a> 
     </div>
+    <div ng-if="!helpService.login2()">
     <div flex-item="1">
       <a href="#/Registro">Registrarse</a>
+    </div>
     </div>
     <div flex-item="1">
       <a href="#/Usuarios/:id">Perfil</a>

@@ -1,5 +1,5 @@
    angular.module('iServifast')
-    .controller('serviciodetailCtrl', function($scope, servicioService,$routeParams, $http){
+    .controller('serviciodetailCtrl', function($scope, servicioService,$routeParams, $http,helpService){
         $scope.servicio =[];
         $scope.loaded= false;
         $scope.form = {

@@ -15,6 +15,7 @@
 				</div>
 			</div>
 		</div>
+    <div ng-if="helpService.login2()">
     	<div flex-item="4" flex-item-order="2">
     		<div flex-item="4">
 		        <div class="card top-space">
@@ -32,19 +33,21 @@
             	</div>
 			</div>
 		</div>
+    </div>
 	</div>
-
+  <div ng-if="helpService.login2()">
     <div class="content-center">
     <div class="col-lg-10 col-centered">
     <dir-disqus disqus-shortname="iservifast"
             disqus-identifier="{{servicio.idServicio}}"
             disqus-title="{{servicio.titulo}}"
-            disqus-url="http://localhost:9000/Servicio/{{servicio.idServicio}}"
+            disqus-url="http://104.236.79.2:9000/Servicio/{{servicio.idServicio}}"
             disqus-api-key="l2By4KUfHVPySTXvEnhlPtxVTZP8UjQmgclbQnxx8jBsE18cHhSPGjTIAg1LtT7U"
             
             ready-to-bind="{{ loaded }}"
             >
 </dir-disqus>
+    </div>
     </div>
     </div>
     </form>

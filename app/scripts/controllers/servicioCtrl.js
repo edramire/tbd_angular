@@ -1,6 +1,6 @@
 (function(){
     angular.module('iServifast')
-    .controller('servicioCtrl', function($scope, servicioService,$filter){
+    .controller('servicioCtrl', function($scope, servicioService,$filter,helpService){
         $scope.servicios =[];
         $scope.newServicio = [];
         $scope.date = $filter('date')(new Date(),'yyyy-MM-dd');
