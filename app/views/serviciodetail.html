@@ -15,9 +15,10 @@
 				</div>
 			</div>
 		</div>
-    <div ng-if="helpService.login2()">
+    
     	<div flex-item="4" flex-item-order="2">
     		<div flex-item="4">
+        <div ng-if="check()">
 		        <div class="card top-space">
         	        <div class="p+">
                		    <div flex-item>
@@ -35,7 +36,7 @@
 		</div>
     </div>
 	</div>
-  <div ng-if="helpService.login2()">
+  <div ng-if="check()">
     <div class="content-center">
     <div class="col-lg-10 col-centered">
     <dir-disqus disqus-shortname="iservifast"

@@ -28,4 +28,12 @@
             });
 
         }
+        $scope.check = function(){     
+                if (sessionStorage.getItem("unombre")){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+        }
     });

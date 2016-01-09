@@ -31,7 +31,12 @@
                 $scope.form.fecha,
                 $scope.form.precio,
                 $scope.form.titulo,
-                1)
+                1,
+                " ",
+                " ",
+                " ",
+                " ",
+                " ")
 
             .success(function(data){
                 $scope.servicio = data;
@@ -47,6 +52,15 @@
                 $scope.form.duracion="";
 
  
+        }
+
+        $scope.check = function(){     
+                if (sessionStorage.getItem("unombre")){
+                    return true;
+                }
+                else{
+                    return false;
+                }
         }
 
     });

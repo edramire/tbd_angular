@@ -40,30 +40,28 @@
 
 
 </head>
-<body ng-app="iServifast">
+<body ng-app="iServifast" ng-controller="solicitudCtrl">
 <nav>
   <div class="bgc-red-800 tc-white" flex-container="row" flex-align="center center">
     <div flex-item="4">
     <a href="#/home"><img class="logo" style="height:70px  " src="images/logo.png" alt="logo" ></a>
     </div>
-    <div flex-item="1" ng-hide="">
+    <div flex-item="1" ng-hide="check()">
       <a href="#/Login">Login</a> 
-    </div>
-    <div ng-if="!helpService.login2()">
-    <div flex-item="1">
+    </div>    
+    <div flex-item="1" ng-hide="check()">
       <a href="#/Registro">Registrarse</a>
-    </div>
-    </div>
-    <div flex-item="1">
+    </div>    
+    <div flex-item="1" ng-hide="!check()">
       <a href="#/Usuarios/:id">Perfil</a>
     </div>
-     <div flex-item="1">
+    <div flex-item="1" ng-hide="">
       <a href="#/Servicio">Servicios</a>
-    </div>
-    <div flex-item="1">
+    </div>    
+    <div flex-item="1" ng-hide="">
       <a href="#/Solicitud">Solicitudes</a>
     </div>
-  </div>
+    
 </nav>
     <div ng-view=""></div>
 </body>

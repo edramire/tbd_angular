@@ -20,7 +20,12 @@ angular.module('iServifast')
                     fecha: fecha,
                     precio: precio,
                     titulo: titulo,
-                    idu: idu
+                    idu: idu,
+                    region: "test",
+                    unombre: "tes",
+                    unick: "tes",
+                    catnombre: "tes",
+                    comnombre: "tes"
                     },
             headers: {'Content-Type': 'application/json'}
             });

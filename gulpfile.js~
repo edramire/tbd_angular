@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 var serverConfig = {
         livereload: true,
         port: 9000,
-        open: true,
+        open: true
     };
 
 gulp.task('bower', function(){

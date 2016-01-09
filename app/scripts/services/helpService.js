@@ -17,6 +17,16 @@
             });
 
 
+        },
+
+    check:function(){
+    var aux=sessionStorage.getItem("uid");      
+        if (aux){
+          return true;
         }
+        else{
+          return false;
+        }
+    }
   };
 }])
