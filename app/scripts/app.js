@@ -31,6 +31,10 @@
             templateUrl: 'views/serviciodetail.html',
             controller: 'serviciodetailCtrl'
           })
+        .when('/tusservicios',{
+            templateUrl: 'views/userservices.html',
+            controller: 'servicioUSERCtrl'
+        })
         .otherwise({
             redirectTo: '/home'
           });

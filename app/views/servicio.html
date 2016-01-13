@@ -3,6 +3,7 @@
 <lx-tabs>
 	<lx-tab heading="Servicios">
 		<div class="p+">	
+
 			<div class="card" ng-repeat="servicio in servicios" >
 				<div class="p+">
 					<strong class="fs-headline display-block tc-red-900">
@@ -14,8 +15,10 @@
 				</div>
 				<div class="card__actions">
 					<a href="#/Servicio/{{servicio.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
+					<div ng-if="!check3()">
 					<a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
 					<a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -28,31 +31,63 @@
 				<div class="p+">
 					<div class="card top-space">
 						<div class="p+">
+						<label for="singleSelect"> Categoria: </label>
+						    <select name="singleSelect" ng-model="oferta.CAT">
+						      <option value="1">Educativo</option>
+						      <option value="2">Hospedaje</option>
+						      <option value="3">Transporte</option>
+						      <option value="4">Tecnico</option>
+						      <option value="5">Salud</option>
+						      <option value="6">Seguridad</option>
+						      <option value="7">Domestico</option>
+						      <option value="8">Vestuario</option>
+						      <option value="9">Mascotas</option>
+						      <option value="10">Jardineria</option>
+						      <option value="11">Asistencia tecnica</option>
+						    </select></br></br>
+						    <label for="singleSelect"> Comunidad: </label>
+						    <select name="singleSelect" ng-model="oferta.COM">
+						      <option value="1">Villa Portales</option>
+						      <option value="2">Villa Los Héroes</option>
+						      <option value="3">Villa O'Higgins</option>
+						      <option value="4">Barrio Estoril</option>
+						      <option value="5">Villa Olímpica</option>
+						      <option value="6">Barrio Cottolengo</option>
+						      <option value="7">Villa Macul</option>
+						      <option value="8">Barrio Los Quillayes</option>
+						      <option value="9">Barrio Manuel Montt</option>
+						      <option value="10">Barrio Los Leones</option>
+						      <option value="11">Barrio Lo Curro tecnica</option>			<option value="12">Barrio Ossandon</option>
+						      <option value="13">Villa Frei</option>
+						      <option value="14">Barrio Argentina</option>
+						      <option value="15">Barrio Toesca</option>
+
+						    </select>
 							<div flex-container="row">
 								<div flex-item>
 									<lx-text-field label="Titulo">
-									<input type="text" ng-model="form.titulo">
+									<input type="text" ng-model="oferta.T">
 									</lx-text-field>	
 								</div>	
 							</div>
 							<div flex-container="row">
 								<div flex-item>
 									<lx-text-field label="Descripcion">
-									<input type="text" ng-model="form.descripcion">
+									<input type="text" ng-model="oferta.D">
 									</lx-text-field>	
 								</div>	
 							</div>
 							<div flex-container="row">
 								<div flex-item>
 									<lx-text-field label="Precio">
-									<input type="text" ng-model="form.precio">
+									<input type="text" ng-model="oferta.P">
 									</lx-text-field>	
 								</div>	
 							</div>
 							<div flex-container="row">
 								<div flex-item>
 									<lx-text-field label="Duracion">
-									<input type="text" ng-model="form.duracion">
+									<input type="text" ng-model="oferta.DU">
 									</lx-text-field>	
 								</div>	
 							</div>

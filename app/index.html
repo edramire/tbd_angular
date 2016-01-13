@@ -60,6 +60,9 @@
     </div>    
     <div flex-item="1" ng-hide="">
       <a href="#/Solicitud">Solicitudes</a>
+    </div>        
+    <div flex-item="1" ng-hide="!check()">
+      <a href="#/tusservicios">Tus servicios</a>
     </div>
     
 </nav>
@@ -87,12 +90,14 @@
   <script src="scripts/controllers/mostraruserCtrl.js"></script>
   <script src="scripts/controllers/registroCtrl.js"></script>
   <script src="scripts/controllers/servicioCtrl.js"></script>
+  <script src="scripts/controllers/servicioUSERCtrl.js"></script>
   <script src="scripts/controllers/serviciodetailCtrl.js"></script>
   <script src="scripts/controllers/solicitudCtrl.js"></script>
   <script src="scripts/directives/loginDirective.js"></script>
   <script src="scripts/services/helpService.js"></script>
   <script src="scripts/services/loginService.js"></script>
   <script src="scripts/services/servicioSrv.js"></script>
+  <script src="scripts/services/servicioUSERService.js"></script>
   <script src="scripts/services/sessionService.js"></script>
   <script src="scripts/services/solicitudSrv.js"></script>
   <script src="scripts/services/usuarioSrv.js"></script>

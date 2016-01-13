@@ -1,5 +1,5 @@
- angular.module('iServifast').controller('loginCtrl',function($http, $location,$scope){
-	 
+ angular.module('iServifast').controller('loginCtrl',function($http, $location,$scope,helpService){
+	 	
 		$scope.login=function(){
 			var $promise=$http({
                 method: 'POST',
@@ -11,6 +11,7 @@
 
 				if($scope.user.usuario){
 					sessionStorage.setItem('unombre',$scope.user.usuario);
+					sessionStorage.setItem('uestado',helpService.check2($scope.user.usuario));
 					$location.path('/home');
 				}	       
 				else  {

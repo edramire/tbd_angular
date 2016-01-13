@@ -8,26 +8,21 @@ angular.module('iServifast')
             var urlBase = 'https://104.236.79.2:8181/Servifast/Oferta/';
             return $http.get(urlBase+servicioId);
         };
-        this.addPost = function(idcat,idcom,descripcion,duracion,fecha,precio,titulo,idu){
+        this.addPost = function(idcat,idcom,descripcion,duracion,precio,titulo,idu){
             var request = $http({
             method: "post",
             url: "https://104.236.79.2:8181/Servifast/Oferta/crear/",
             data: {
-                    idcat: idcat,
-                    idcom: idcom,
-                    descripcion: descripcion,
-                    duracion: duracion,
-                    fecha: fecha,
-                    precio: precio,
-                    titulo: titulo,
-                    idu: idu,
-                    region: "test",
-                    unombre: "tes",
-                    unick: "tes",
-                    catnombre: "tes",
-                    comnombre: "tes"
+                    "Categoria_idCategoria": 1,
+                    "Comunidad_idComunidad": 1,
+                    "descripcion": descripcion,
+                    "duracion": duracion,
+                    "precio": precio,
+                    "titulo": titulo,
+                    "Usuario_idUsuario": 1
                     },
-            headers: {'Content-Type': 'application/json'}
+            headers: {'Content-Type': 'application/json'
+                    }
             });
             return ( request);
         };
@@ -35,12 +30,25 @@ angular.module('iServifast')
             var request= $http({
                          method: 'POST',
                         url: 'https://104.236.79.2:8181/Servifast/Voto/crear',
-                        data: {"idu": 9,
+                        data: {"idu": sessionStorage.getItem("uid"),
                                "ids": servicioId,
                                "nota":nota},
                         headers: {'Content-Type': 'application/json'}
                         });
                 return (request);
-        } 
+        }; 
+        this.addFavorito = function(servicioId){
+            var request= $http({
+                method:'POST',
+                url: 'https://104.236.79.2:8181/Servifast/Favoritos/crear',
+                data:{
+                    "servicio_idServicio": sessionStorage.getItem("uid"),
+                    "usuario_idUsuario": servicioId
+                },
+                headers: {'Content-Type': 'application/json'}
+            });
+            return (request);
+
+        }
 
 });
