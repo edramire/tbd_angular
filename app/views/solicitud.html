@@ -1,9 +1,11 @@
 <div ng-app="iServifast" ng-controller="solicitudCtrl">
+
 <lx-tabs>
 	<lx-tab heading="Solicitud">
 		<div class="p+">	
 			<div class="card" ng-repeat="solicitud in solicitudes" >
 				<div class="p+">
+				<img ng-src="{{solicitud.imagen}}" width="300" >
 					<strong class="fs-headline display-block tc-red-900">
 						{{solicitud.titulo}}
 					</strong>
@@ -24,6 +26,38 @@
 				<div class="p+">
 					<div class="card top-space">
 						<div class="p+">
+							<label for="singleSelect"> Categoria: </label>
+						    <select name="singleSelect" ng-model="oferta.CAT">
+						      <option value="1">Educativo</option>
+						      <option value="2">Hospedaje</option>
+						      <option value="3">Transporte</option>
+						      <option value="4">Tecnico</option>
+						      <option value="5">Salud</option>
+						      <option value="6">Seguridad</option>
+						      <option value="7">Domestico</option>
+						      <option value="8">Vestuario</option>
+						      <option value="9">Mascotas</option>
+						      <option value="10">Jardineria</option>
+						      <option value="11">Asistencia tecnica</option>
+						    </select></br></br>
+						    <label for="singleSelect"> Comunidad: </label>
+						    <select name="singleSelect" ng-model="oferta.COM">
+						      <option value="1">Villa Portales</option>
+						      <option value="2">Villa Los Héroes</option>
+						      <option value="3">Villa O'Higgins</option>
+						      <option value="4">Barrio Estoril</option>
+						      <option value="5">Villa Olímpica</option>
+						      <option value="6">Barrio Cottolengo</option>
+						      <option value="7">Villa Macul</option>
+						      <option value="8">Barrio Los Quillayes</option>
+						      <option value="9">Barrio Manuel Montt</option>
+						      <option value="10">Barrio Los Leones</option>
+						      <option value="11">Barrio Lo Curro tecnica</option>			<option value="12">Barrio Ossandon</option>
+						      <option value="13">Villa Frei</option>
+						      <option value="14">Barrio Argentina</option>
+						      <option value="15">Barrio Toesca</option>
+
+						    </select>
 							<div flex-container="row">
 								<div flex-item>
 									<lx-text-field label="Titulo">

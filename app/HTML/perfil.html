@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<div ng-app="iServifast" ng-controller="mostraruserCtrl">
+<head>
+<title>Perfil - iServiFast</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+</head>
+<body id="page2">
+<div class="wrap">
+	 <!-- header -->
+	 
+	 <div class="container3">
+	 <!-- Ventanas Pop up -->
+
+			<div class="col-2">	
+	<form class="contact_form" ng-submit="edit()" name="contact_form">
+<ul>
+    <li>
+         <h2>Perfil</h2>
+    </li>
+     <li>
+        <label for="name">Nickname:</label>
+        <input type="text" ng-model ="usuario.usuario" name="nickname"    />
+    </li>
+    <li>
+        <label for="name">Nombre:</label>
+        <input type="text" ng-pattern="usuario.nombre" ng-trim="false" ng-model ="usuario.nombre" name="input"  />
+    </li>
+     <li>
+        <label for="name">Apellido:</label>
+        <input type="text" ng-model ="usuario.apellido" name="apellido"    />
+    </li>
+     <li>
+        <label for="name">Ciudad:</label>
+        <input type="text" ng-model ="usuario.ciudad" name="ciudad"   />
+    </li>
+     <li>
+        <label for="name">Comuna:</label>
+        <input type="text" ng-model ="usuario.comuna" name="comuna"  />
+    </li>
+     <li>
+        <label for="name">Direccion:</label>
+        <input type="text" ng-model ="usuario.direccion" name="direccion"   />
+    </li>
+     <li>
+        <label for="name">Region:</label>
+        <input type="text" ng-model ="usuario.region" name="region"  />
+    </li>
+    <li>
+    <label for="email">Email:</label>
+    <input type="email" ng-model ="usuario.mail" name="email" />
+    <span class="form_hint">Formato "ejemplo@ejemplo.com"</span>
+	</li>
+    <li>
+    <button class="submit" type="submit">Guardar</button>
+</li>
+
+</ul>
+</form>
+</div>
+	 </div>
+</div>
+<!-- footer -->
+<footer>
+	 <div class="container3" >
+			<div class="inside"> <a>iServiFast </a>- Marca registrada <br>
+            <!-- VLinks --></div>
+	 </div>
+
+</footer>
+</body>
+</html>

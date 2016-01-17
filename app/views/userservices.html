@@ -1,20 +1,20 @@
 <div ng-app="iServifast" ng-controller="servicioUSERCtrl">		
-		<div class="p+">	
-
-			<div class="card" ng-repeat="servicio in servicios" >
-				<div class="p+">
-					<strong class="fs-headline display-block tc-red-900">
-						{{servicio.titulo}}
-					</strong>
-					<div class="paragraph fs-body-1 mt+">
-						<h1>{{servicio.descripcion}}</h1>	
-					</div>
-				</div>
-				<div class="card__actions">
-					<a href="#/Servicio/{{servicio.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
-					<a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
-					<a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
-				</div>
-			</div>
-		</div>
+		<div class="p+">    
+        <div class="container">
+            <div class="card" ng-repeat="servicio in servicios" >
+                <img  ng-src="{{servicio.imagen}}" width="200" >
+                    <strong class="fs-headline display-block tc-red-900">
+                        {{servicio.titulo}}
+                    </strong>
+                    <div class="paragraph fs-body-1 mt+">
+                        <h1>{{servicio.descripcion}}</h1>   
+                    </div>
+                    <a href="#/Servicio/{{servicio.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
+                    <div ng-if="!check3()">
+                    <a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
+                    <a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+                    </div>
+            </div>
+            </div>
+        </div>
 </div>

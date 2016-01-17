@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="iServifast" ng-controller="registroCtrl">
+<head><title>Crear cuenta - iServiFast</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+</head>
+<body id="page1">
+<div class="wrap"><div class="inner_cop"><!-- HLinks --></div>
+	 <!-- header -->
+	<div class="container3">
+	<div class="col-1">	
+	<form ng-submit="addPost()" class="contact_form" action="" name="contact_form">
+
+<ul>
+    <li>
+         <h2>Registro</h2>
+    </li>
+    <li>
+        <label for="name">Nombre:</label>
+        <input  ng-model="form.nombre" type="text" name="nombre" required  />
+    </li>
+     <li>
+        <label for="name">Apellido:</label>
+        <input ng-model="form.apellido" type="text" name="apellido" required  />
+    </li>
+     <li>
+        <label for="name">Ciudad:</label>
+        <input ng-model="form.ciudad" type="text" name="ciudad" required  />
+    </li>
+     <li>
+        <label for="name">Comuna:</label>
+        <input ng-model="form.comuna" type="text" name="comuna" required  />
+    </li>
+     <li>
+        <label for="name">Direccion:</label>
+        <input ng-model="form.direccion" type="text" name="direccion" required  />
+    </li>
+     <li>
+        <label for="name">Region:</label>
+        <input ng-model="form.region" type="text" name="region" required  />
+    </li>
+    <li>
+    <label for="email">Email:</label>
+    <input ng-model="form.mail" type="email" name="email"placeholder="ejemplo@ejemplo.com" required />
+    <span class="form_hint">Formato "ejemplo@ejemplo.com"</span>
+</li>
+ <li>
+        <label for="name">Contraseña:</label>
+        <input ng-model="form.password" type="password" name="password" required  />
+    </li>
+     <li>
+        <label for="name">Nickname:</label>
+        <input ng-model="form.usuario" type="text" name="nickname" required  />
+    </li>
+<li>
+    <button class="submit" type="submit">Registrar</button>
+</li>
+
+</ul>
+</form>
+</div>
+<div class="col-2">
+<img class="logo" style="width:300px;height:400px;margin-top:60px  " src="images/imagen-registro.png" alt="registro" >
+</div>
+	</div>
+</div>
+<!-- footer -->
+<footer>
+	<div class="container3" >
+			<div class="inside"> <a>iServiFast </a>- Marca registrada <br>
+            <!-- VLinks --></div>
+	 </div>
+</footer>
+</body>
+ <!-- Recursos de bower-->
+  <!-- build:js js/vendor.js --> 
+  <!-- bower:js -->
+  <!-- endbuild -->
+  <!-- Recursos personales-->
+  <!-- build:js js/scripts.js -->   
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- endbuild -->
+
+</html>

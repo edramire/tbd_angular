@@ -1,5 +1,5 @@
 (function(){
-    angular.module('iServifast', ['ngRoute','lumx','angularUtils.directives.dirDisqus'])
+    angular.module('iServifast', ['ngRoute','lumx','angularUtils.directives.dirDisqus','ngImgur'])
     .config(function($routeProvider){
         $routeProvider
         .when('/home', {
@@ -7,7 +7,7 @@
             controller:'homeCtrl'
           })
         .when('/Login', {
-            templateUrl:'views/login2.html',
+            templateUrl:'HTML/login.html',
             controller:'loginCtrl'
         })
         .when('/Usuario/:id', {
@@ -16,7 +16,7 @@
           })
 
         .when('/Registro', {
-            templateUrl: 'views/registro.html',
+            templateUrl: 'HTML/crear-cuenta.html',
             controller: 'registroCtrl'
           })
         .when('/Solicitud', {
@@ -24,8 +24,13 @@
             controller: 'solicitudCtrl'
           })
         .when('/Servicio', {
-            templateUrl: 'views/servicio.html',
+            templateUrl: 'HTML/servicio.html',
             controller: 'servicioCtrl'
+          })
+
+        .when('/Perfil', {
+            templateUrl: 'HTML/perfil.html',
+            controller: 'mostraruserCtrl'
           })
         .when('/Servicio/:servicioId', {
             templateUrl: 'views/serviciodetail.html',

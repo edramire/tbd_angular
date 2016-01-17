@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div ng-app="iServifast" ng-controller="loginCtrl">
+<head>
+<title>Login - iServiFast</title>
+<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="description" content="Place your description here" />
+<meta name="keywords" content="put, your, keyword, here" />
+<meta name="author" content="Templates.com - website templates provider" />
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+<script type="text/javascript" src="http://info.template-help.com/files/ie6_warning/ie6_script.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/AG_Foreigner_Light-Plain_400.font.js"></script>
+<script type="text/javascript" src="js/Myriad_Pro_400.font.js"></script>
+<script type="text/javascript" src="js/tabs.js"></script>
+<script type="text/javascript" src="js/jquery.faded.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<!--[if lt IE 7]>
+		 <link rel="stylesheet" href="css/ie/ie6.css" type="text/css" media="screen">
+		 <script type="text/javascript" src="js/ie_png.js"></script>
+		 <script type="text/javascript">
+				ie_png.fix('.png, ul.tabs li a, ul.tabs li a span, ul.tabs li a span, figure img');
+		 </script>
+<![endif]-->
+<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/html5.js"></script>
+	<![endif]-->
+
+</head>
+<body id="page2">
+<div ng-app="iServifast" class="wrap"><div class="inner_cop"><!-- HLinks --></div>
+	 <!-- header -->
+	 
+ <div class="container2">			
+						 <div class="login-block">
+							 	<div ng-controller="loginCtrl">
+									<form ng-submit="login()">
+    									<label>Nickname:</label>
+  										  <input type="text" placeholder="Username" class="form-control" ng-model="user.usuario" required/>
+    									<label>Password:</label>
+    										<input type="password"  class="form-control" placeholder="Password" ng-model="user.pass" required/>
+   									 <button type="submit" class="btn btn--red btn--l btn--raised">Ingresar</button>
+									<li style ="text-align: center">¿No estas registrado? <a href="crear-cuenta.html" ><span><b>Registrate ahora</b></span></a></li>
+								</form>
+								</div>
+							 </div>
+				</div>
+
+</div>
+<!-- footer -->
+<footer>
+	 <div class="container3" >
+			<div class="inside"> <a>iServiFast </a>- Marca registrada <br>
+            <!-- VLinks --></div>
+	 </div>
+</footer>
+</body>
+</div>
+</html>
