@@ -23,16 +23,10 @@
         getSolicitud();
 
         $scope.addPost = function (){
-        var f = $scope.fix.dat;
-        var reader = new FileReader();     
+            imgur.upload($scope.fix.dat).then(function then(model) {
+            console.log('Your adorable cat be here: ' + model.link);
+            var link=model.link;
 
-            // Keep a reference to the File in the FileReader so it can be accessed in callbacks
-        
-        reader.onload = function(e) {
-            var dataURL = reader.result;
-        }
-        reader.readAsDataURL($scope.fix.data);
-        var link= imgur.upload(reader);
         var $promise =$http({ 
 
             method: "POST",
@@ -44,13 +38,14 @@
                     "descripcion":$scope.oferta.D,
                     "duracion":$scope.oferta.DU,
                     "imagen":link,
-                    "promedio":0,
                     "titulo":$scope.oferta.T,
                     "usuario_idUsuario":sessionStorage.getItem("uid")
                   },headers: {'Content-Type': 'application/json;charset=utf-8'}
             }).success(function(data,status,headers,config){  
               console.log(data);
             })
+
+        });
 
 
  

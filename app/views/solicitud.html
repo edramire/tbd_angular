@@ -2,21 +2,34 @@
 
 <lx-tabs>
 	<lx-tab heading="Solicitud">
-		<div class="p+">	
-			<div class="card" ng-repeat="solicitud in solicitudes" >
-				<div class="p+">
-				<img ng-src="{{solicitud.imagen}}" width="300" >
-					<strong class="fs-headline display-block tc-red-900">
-						{{solicitud.titulo}}
-					</strong>
-					<div class="paragraph fs-body-1 mt+">
-						<h1>{{solicitud.descripcion}}</h1>	
-				
-					</div>	
-				</div>
+		<div flex-item="6">
+        <div class="card" ng-repeat="solicitud in solicitudes">
 
-			</div>
-		</div>
+            <div class="card__actions">
+            <div class="card__img card__img--top">
+                <img ng-src="{{solicitud.imagen}}" width="450">
+                <span class="fs-headline tc-white-1 display-block">{{solicitud.titulo}}</span>
+            </div>
+
+                <a href="#/Servicio/{{solicitud.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
+                    <div ng-if="!check3()">
+                    <a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
+                    <a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+                    </div>
+            <div class="p+">
+                <span class="fs-subhead tc-black-2 display-block">{{solicitud.precio}}</span>
+
+                <div class="paragraph fs-body-1">
+                    <p>
+                        {{solicitud.descripcion}}
+                    </p>
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+    </div>
 	</lx-tab>
     <div ng-if="check()">
 	<lx-tab heading="Crear Solicitud">
