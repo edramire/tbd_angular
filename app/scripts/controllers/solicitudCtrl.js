@@ -59,6 +59,15 @@
                     return false;
                 }
         }
+        $scope.check3=function(){
+    var aux=sessionStorage.getItem("uestado");      
+        if (angular.equals(aux,"1")){
+          return false;
+        }
+        else{
+          return true;
+        }
+    }
     });
 
   })();

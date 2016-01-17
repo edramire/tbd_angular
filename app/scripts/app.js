@@ -35,10 +35,18 @@
         .when('/Servicio/:servicioId', {
             templateUrl: 'views/serviciodetail.html',
             controller: 'serviciodetailCtrl'
+          })      
+        .when('/Solicitud/:servicioId', {
+            templateUrl: 'views/solicituddetalle.html',
+            controller: 'solicituddetalleCtrl'
           })
         .when('/tusservicios',{
             templateUrl: 'views/userservices.html',
             controller: 'servicioUSERCtrl'
+        })
+        .when('/Favoritos',{
+            templateUrl: 'views/favoritos.html',
+            controller: 'favoritoCtrl'
         })
         .otherwise({
             redirectTo: '/home'

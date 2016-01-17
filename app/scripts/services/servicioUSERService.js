@@ -8,5 +8,10 @@ angular.module('iServifast')
             var urlBase = 'http://104.236.79.2:8181/Servifast/Oferta/';
             return $http.get(urlBase+servicioId);
         };
+        this.Favorito = function(id){
+            var urlBase = 'http://104.236.79.2:8181/Servifast/Favoritos/Servicios/'+id;
+            return $http.get(urlBase);
+        };
+
 
 });

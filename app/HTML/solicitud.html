@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
 <title>Solicitud - iServiFast</title>
+<div ng-app="iServifast" ng-controller="solicitudCtrl">
 <meta charset="utf-8">
 <meta name="description" content="Place your description here" />
 <meta name="keywords" content="put, your, keyword, here" />
 <meta name="author" content="Templates.com - website templates provider" />
-<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
-<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
 <!--[if lt IE 7]>
 		 <link rel="stylesheet" href="css/ie/ie6.css" type="text/css" media="screen">
 		 <script type="text/javascript" src="js/ie_png.js"></script>
@@ -19,96 +17,121 @@
 <!--[if lt IE 9]>
 		<script type="text/javascript" src="js/html5.js"></script>
 	<![endif]-->
-</head>
-<body id="page2">
-<div class="wrap"><div class="inner_cop"><!-- HLinks --></div>
-	 <!-- header -->
-	 <header>
-			<div class="container3">
-								 <h1><a href="index.html"><img class="logo" style="height:70px  " src="images/logo2.png" alt="logo" ></a></h1>
-				 <nav>
-						<ul>
-							 <li><a href="index.html"><span><span>Home</span></span></a></li>
-							 <li><a href="perfil.html"><span><span>Perfil</span></span></a></li>
-							 <li><a href="servicio.html"><span><span>Servicios</span></span></a></li>
-							 <li><a href="solicitud.html" class="active"><span><span>Solicitudes</span></span></a></li>
-							 <li><a href="crear-cuenta.html"><span><span>Crear cuenta</span></span></a></li>
-							 <li><a href="login.html"><span><span>Login</span></span></a></li>
-						</ul>
-				 </nav>
-		</div>
-	 </header>
-	 <div class="container3">
-<div class="tabs">
-    <!--pestaña 1 activa por defecto-->
-    <div class="tab">
-        <input type="radio" id="tab-1" name="tab-group-1" checked>
-        <label for="tab-1">VER SOLICITUD</label>
-        <!--contenido de la pestaña 1-->
-        <div class="content">
-        <div class="col-1">
-<img class="logo" style="height:200px;margin-left:50px; border: 5px solid #808080; " src="images/no-imagen.png" alt="servicio" >
 
-</div>
- <div class="col-2">
- <div class ="serv">
- <ul>
-         <li>
-         <div id ="titleSol" ><h2 style="margin-bottom: 0px;">Jardineria Juanito </h2></div>
-<!--          <div id="precio"><h2 style="margin-bottom: 0px;"><small itemprop="priceCurrency" content="CLP">$</small>10.000</h2></div> -->
-			Fecha(la idea es que no diga fecha)</li>
-         <li><b>Descripcion:</b><br/> 
-         Se realizan trabajos de jardineria en la comuna de Lo Prado.</li>
-         <li><b>Duracion:</b></li>
-                <button type="submit" class="favorito"> favoritos</button>
-<!-- 	<button type="button" class="logo" style="width:45px ;height:35px"  src="images/estrella-ploma.png" onclick="cambiar('id_imagen','estrella-ploma.png','estrella-dorada.png')" ></button>  -->
-<!--          <input type=image src="images/estrella.jpg" width="45" height="35"> -->
-         </ul>
- </div>
-    </div>
-    <div>aqui comentarios</div>
+<lx-tabs>
+    <lx-tab heading="Solicitud">
+        <div flex-item="6">
+        <div class="card" ng-repeat="solicitud in solicitudes">
+
+            <div class="card__actions">
+            <div class="card__img card__img--top">
+                <img ng-src="{{solicitud.imagen}}" width="450">
+                <span class="fs-headline tc-white-1 display-block">{{solicitud.titulo}}</span>
+            </div>
+
+                <a href="#/Servicio/{{solicitud.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
+                    <div ng-if="!check3()">
+                    <a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
+                    <a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+                    </div>
+            <div class="p+">
+                <span class="fs-subhead tc-black-2 display-block">{{solicitud.precio}}</span>
+
+                <div class="paragraph fs-body-1">
+                    <p>
+                        {{solicitud.descripcion}}
+                    </p>
+                </div>
+
+            </div>
+            </div>
+
         </div>
     </div>
-    <!-- pestaña 2-->
-    <div class="tab">
-        <input type="radio" id="tab-2" name="tab-group-1">
-        <label for="tab-2">INGRESAR SOLICITUD</label>
-        <div class="content">
-           	<form class="contact_form" action="" method="post" name="contact_form">
+    </lx-tab>
+    <div ng-if="check()">
+    <lx-tab heading="Crear Solicitud">
+    <form ng-submit="addPost()">
+        <div class="mt++ ng-scope" flex-container="row" flex-glutter="24">
+            <div flex-item>
+                <div class="p+">
+                    <div class="card top-space">
+                        <div class="p+">
+                          <input type="file" id="algun" fileread="fix.dat" ng-model="fix.dat"></br></br></br>
+                            <label for="singleSelect"> Categoria: </label>
+                            <select name="singleSelect" ng-model="oferta.CAT">
+                              <option value="1">Educativo</option>
+                              <option value="2">Hospedaje</option>
+                              <option value="3">Transporte</option>
+                              <option value="4">Tecnico</option>
+                              <option value="5">Salud</option>
+                              <option value="6">Seguridad</option>
+                              <option value="7">Domestico</option>
+                              <option value="8">Vestuario</option>
+                              <option value="9">Mascotas</option>
+                              <option value="10">Jardineria</option>
+                              <option value="11">Asistencia tecnica</option>
+                            </select></br></br>
+                            <label for="singleSelect"> Comunidad: </label>
+                            <select name="singleSelect" ng-model="oferta.COM">
+                              <option value="1">Villa Portales</option>
+                              <option value="2">Villa Los Héroes</option>
+                              <option value="3">Villa O'Higgins</option>
+                              <option value="4">Barrio Estoril</option>
+                              <option value="5">Villa Olímpica</option>
+                              <option value="6">Barrio Cottolengo</option>
+                              <option value="7">Villa Macul</option>
+                              <option value="8">Barrio Los Quillayes</option>
+                              <option value="9">Barrio Manuel Montt</option>
+                              <option value="10">Barrio Los Leones</option>
+                              <option value="11">Barrio Lo Curro tecnica</option>           <option value="12">Barrio Ossandon</option>
+                              <option value="13">Villa Frei</option>
+                              <option value="14">Barrio Argentina</option>
+                              <option value="15">Barrio Toesca</option>
 
-<ul>
-    <li>
-    </li>
-    <li>
-        <label for="name">Titulo:</label>
-        <input type="text" name="titulo" required  />
-    </li>
-     <li>
-        <label for="name">Descripción:</label>
-        <input type="text" name="descripcion" required  />
-    </li>
-     <li>
-        <label for="name">Precio:</label>
-        <input type="text" name="precio" required  />
-    </li>
-     <li>
-        <label for="name">Duración:</label>
-        <input type="text" name="duracion" required  />
-    </li>
-  
-    
-<li>
-    <button class="submit" type="submit" >Guardar</button>
-</li>
-
-</ul>
-</form>
+                            </select>
+                            <div flex-container="row">
+                                <div flex-item>
+                                    <lx-text-field label="Titulo">
+                                    <input type="text" ng-model="form.titulo">
+                                    </lx-text-field>    
+                                </div>  
+                            </div>
+                            <div flex-container="row">
+                                <div flex-item>
+                                    <lx-text-field label="Descripcion">
+                                    <input type="text" ng-model="form.descripcion">
+                                    </lx-text-field>    
+                                </div>  
+                            </div>
+                            <div flex-container="row">
+                                <div flex-item>
+                                    <lx-text-field label="Precio">
+                                    <input type="text" ng-model="form.precio">
+                                    </lx-text-field>    
+                                </div>  
+                            </div>
+                            <div flex-container="row">
+                                <div flex-item>
+                                    <lx-text-field label="Duracion">
+                                    <input type="text" ng-model="form.duracion">
+                                    </lx-text-field>    
+                                </div>  
+                            </div>
+                            <div class="card__actions">
+                                <button type="submit" class="btn btn--red btn--l btn--raised">
+                                Guardar
+                                </button>
+                            </div>
+                        </div>          
+                    </div>
+                </div>
+            </div>
         </div>
+    </form>
+    </lx-tab>
     </div>
-
-</div>
-</div>
-</div>
+</lx-tabs>
 <!-- footer -->
 <footer>
 	<div class="container3" >

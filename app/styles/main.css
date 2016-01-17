@@ -22,7 +22,7 @@ a, a:visited {
   box-shadow: 1px 1px 5px #fff; }
 
 .logo {
-  max-width: 700px;
+  max-width: 120px;
   float: left;
   transition: 1000ms ease; }
 

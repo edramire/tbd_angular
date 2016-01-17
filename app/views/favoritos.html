@@ -1,4 +1,4 @@
-<div ng-app="iServifast" ng-controller="servicioUSERCtrl">		
+<div ng-app="iServifast" ng-controller="favoritoCtrl">		
 		<div class="p+">    
         <div class="container">
             <div class="card" ng-repeat="servicio in servicios" >
@@ -10,8 +10,6 @@
                         <h1>{{servicio.descripcion}}</h1>   
                     </div>
                     <a href="#/Servicio/{{servicio.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
-                    <a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
-                    <a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
                     </div>
             </div>
             </div>

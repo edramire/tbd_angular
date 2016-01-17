@@ -5,7 +5,11 @@ angular.module('iServifast')
             return $http.get(urlBase);
         };
         this.getServicioDetail = function(servicioId){
-            var urlBase = 'https://104.236.79.2:8181/Servifast/Oferta/';
+            var urlBase = 'http://104.236.79.2:8181/Servifast/Oferta/';
+            return $http.get(urlBase+servicioId);
+        };
+        this.getSolicitudDetail = function(servicioId){
+            var urlBase = 'http://104.236.79.2:8181/Servifast/Solicitud/';
             return $http.get(urlBase+servicioId);
         };
         this.addPost = function(idcat,idcom,descripcion,duracion,precio,titulo,idu){
@@ -42,8 +46,9 @@ angular.module('iServifast')
                 method:'POST',
                 url: 'http://104.236.79.2:8181/Servifast/Favoritos/crear',
                 data:{
-                    "servicio_idServicio": sessionStorage.getItem("uid"),
-                    "usuario_idUsuario": servicioId
+                    "servicio_idServicio": servicioId,
+                    "usuario_idUsuario": sessionStorage.getItem("uid")
+                    
                 },
                 headers: {'Content-Type': 'application/json'}
             });

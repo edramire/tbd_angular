@@ -40,7 +40,6 @@
         $scope.addFavorito = function(){
             servicioService.addFavorito($routeParams.servicioId)
             .success(function(data){
-                $scope.voto = data;
                 console.log(data);
             })
             .error(function(error){
