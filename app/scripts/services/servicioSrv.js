@@ -1,7 +1,7 @@
 angular.module('iServifast')
     .service('servicioService', function($http){
         this.getServicio = function(){
-            var urlBase = 'https://104.236.79.2:8181/Servifast/Oferta/';
+            var urlBase = 'http://104.236.79.2:8181/Servifast/Oferta/';
             return $http.get(urlBase);
         };
         this.getServicioDetail = function(servicioId){
@@ -11,7 +11,7 @@ angular.module('iServifast')
         this.addPost = function(idcat,idcom,descripcion,duracion,precio,titulo,idu){
             var request = $http({
             method: "post",
-            url: "https://104.236.79.2:8181/Servifast/Oferta/crear/",
+            url: "http://104.236.79.2:8181/Servifast/Oferta/crear/",
             data: {
                     "Categoria_idCategoria": 1,
                     "Comunidad_idComunidad": 1,
@@ -29,7 +29,7 @@ angular.module('iServifast')
         this.addVoto = function(servicioId,nota){
             var request= $http({
                          method: 'POST',
-                        url: 'https://104.236.79.2:8181/Servifast/Voto/crear',
+                        url: 'http://104.236.79.2:8181/Servifast/Voto/crear',
                         data: {"idu": sessionStorage.getItem("uid"),
                                "ids": servicioId,
                                "nota":nota},
@@ -40,7 +40,7 @@ angular.module('iServifast')
         this.addFavorito = function(servicioId){
             var request= $http({
                 method:'POST',
-                url: 'https://104.236.79.2:8181/Servifast/Favoritos/crear',
+                url: 'http://104.236.79.2:8181/Servifast/Favoritos/crear',
                 data:{
                     "servicio_idServicio": sessionStorage.getItem("uid"),
                     "usuario_idUsuario": servicioId

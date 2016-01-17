@@ -21,7 +21,7 @@
         var $promise =$http({ 
 
             method: "POST",
-            url: "https://104.236.79.2:8181/Servifast/Oferta/crear/",
+            url: "http://104.236.79.2:8181/Servifast/Oferta/crear/",
             data: {
                     "categoria_idCategoria":$scope.oferta.CAT,
                     "comunidad_idComunidad":$scope.oferta.COM,

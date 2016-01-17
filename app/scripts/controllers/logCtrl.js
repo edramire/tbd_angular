@@ -3,7 +3,7 @@
       $scope.addLog = function (){
       $http({
                 method: 'POST',
-                url: 'https://104.236.79.2:8181/Servifast/Usuario/login',
+                url: 'http://104.236.79.2:8181/Servifast/Usuario/login',
                 data: {"username": $scope.newUser.usuario,"password":$scope.newUser.password},
                 headers: {'Content-Type': 'application/json'}
         }).success(function(data,status,headers,config){  

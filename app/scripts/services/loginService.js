@@ -5,7 +5,7 @@
 		login:function(){
 			var $promise=$http({
                 method: 'POST',
-                url: 'https://104.236.79.2:8181/Servifast/Usuario/login',
+                url: 'http://104.236.79.2:8181/Servifast/Usuario/login',
                 data: {"username": $scope.user.usuario,"password":$scope.user.pass},
                 headers: {'Content-Type': 'application/json'}
         }).success(function(data,status,headers,config){  

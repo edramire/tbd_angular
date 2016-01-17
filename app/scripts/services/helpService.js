@@ -4,7 +4,7 @@
       var nombre=sessionStorage.getItem("unombre");
       var id=$http({
                 method: 'GET',
-                url: 'https://104.236.79.2:8181/Servifast/Usuario/nombre/'+nombre,
+                url: 'http://104.236.79.2:8181/Servifast/Usuario/nombre/'+nombre,
                 headers: {'Content-Type': 'application/json'}
         }).success(function(data,status,headers,config){  
               console.log(data);                
@@ -31,7 +31,7 @@
     check2:function(nombre){
       var id= $http({
                 method: 'GET',
-                url: 'https://104.236.79.2:8181/Servifast/Usuario/estado/'+nombre
+                url: 'http://104.236.79.2:8181/Servifast/Usuario/estado/'+nombre
         }).success(function(data,status,headers,config){  
               console.log(data);});
         return id;

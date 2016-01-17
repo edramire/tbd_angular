@@ -6,7 +6,7 @@
         var $promise =$http({ 
 
             method: "GET",
-            url: "https://104.236.79.2:8181/Servifast/Usuario/"+sessionStorage.getItem("uid"),
+            url: "http://104.236.79.2:8181/Servifast/Usuario/"+sessionStorage.getItem("uid"),
             }).success(function(data,status,headers,config){  
                 $scope.usuario=data;
               console.log(data);
