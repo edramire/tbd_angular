@@ -5,6 +5,22 @@
         $scope.form = {
                     nota:""
                 }
+                function RatingController() {
+    this.rating1 = 5;
+    this.rating2 = 2;
+    this.isReadonly = true;
+    this.rateFunction = function(rating) {
+      console.log('Rating selected: ' + rating);
+    };
+  }
+
+  $scope.ratings = [{
+        current: 5,
+        max: 10
+    }, {
+        current: 3,
+        max: 5
+    }];
         function getServicioDetail(){
             servicioService.getServicioDetail($routeParams.servicioId)
             .success(function(data){
@@ -17,8 +33,9 @@
             });
         }
         getServicioDetail();
-        $scope.addVoto = function (){
-            servicioService.addVoto($routeParams.servicioId,$scope.form.nota)
+
+        function addVoto(nota){
+            servicioService.addVoto($routeParams.servicioId,nota)
             .success(function(data){
                 $scope.voto = data;
                 console.log(data);
@@ -28,6 +45,7 @@
             });
 
         }
+        
         $scope.check = function(){     
                 if (sessionStorage.getItem("unombre")){
                     return true;

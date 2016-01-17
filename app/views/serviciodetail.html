@@ -1,20 +1,37 @@
 <div ng-app="iServifast" ng-controller="serviciodetailCtrl">
     
 	<div class="mt++ ng-scope"  flex-container="row" flex-gutter="42">
-<div class="md-col-20">
+<div class="md-col-10">
     	<div flex-item="20" flex-item-order="1">
-    		<div class="card">
-					<strong class="fs-headline display-block tc-red-900">
-						{{servicio.titulo}}
-					</strong>
-          <img ng-src="{{servicio.imagen}}">
-					<div class="paragraph fs-body-1 mt+">
-						<h4>Fecha: {{servicio.fecha}}</h4>
-						<h4>Duracion: {{servicio.duracion}}</h4>
-						<h1>{{servicio.descripcion}}</h1>	
-					</div>
-			</div>
+    		 <div class="card" >
+
+            <div class="card__actions">
+            <div class="card__img card__img--top">
+                <img ng-src="{{servicio.imagen}}" width="550">
+                <span class="fs-headline tc-white-1 display-block">{{servicio.titulo}}</span>
+            </div>
+
+                
+            <div class="p+">
+                <span class="fs-subhead tc-black-2 display-block">Precio: {{servicio.precio}}</span>
+                <span class="fs-subhead tc-black-2 display-block">Fecha: {{servicio.fecha}}</span>
+                <span class="fs-subhead tc-black-2 display-block">Duracion: {{servicio.duracion}}</span>
+                <span class="fs-subhead tc-black-2 display-block">Calificacion de usuarios: {{servicio.promedio}}</span>
+                <span class="fs-subhead tc-black-2 display-block">Area: {{servicio.comnombre}}</span>
+
+                <div class="paragraph fs-body-1">
+                    <p>
+                        {{servicio.descripcion}}
+                    </p>
+                </div>
+
+            </div>
+            </div>
+
+        </div>
 		</div>
+    </div>
+    <div class="md-col-4">
     <form ng-submit="addVoto()">
     	<div flex-item="4" flex-item-order="2">
     		<div flex-item="4">
@@ -30,21 +47,18 @@
                         	<button type="submit" class="btn btn--red btn--l btn--raised">
                         		Votar
                         	</button>
-               		</div>          
-            	</div>
-              </div>
-              </div>
-              </div>
+               		</div>    
   </form>
-
       <div flex-item="4" flex-item-order="3">
   <form ng-submit="addFavorito()">
-              <div class="card top-space">
                   <div class="p+">
                           <button type="submit" class="btn btn--red btn--l btn--raised">
                             Agregar a favorito
                           </button>
                   </div>          
+              </div>
+
+          </div>
               </div>
   </form>
   </div>
@@ -56,6 +70,7 @@
   <div ng-if="check()">
     <div class="content-center">
     <div class="col-lg-10 col-centered">
+    </br></br></br></br></br></br></br></br>
     <dir-disqus disqus-shortname="iservifast"
             disqus-identifier="{{servicio.idServicio}}"
             disqus-title="{{servicio.titulo}}"
