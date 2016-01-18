@@ -1,5 +1,5 @@
 (function(){
-    angular.module('iServifast', ['ngRoute','uiGmapgoogle-maps','lumx','angularUtils.directives.dirDisqus','ngImgur'])
+    angular.module('iServifast', ['ngRoute','lumx','angularUtils.directives.dirDisqus','ngImgur'])
     .config(function($routeProvider){
         $routeProvider
         .when('/home', {
@@ -59,13 +59,7 @@
         .otherwise({
             redirectTo: '/home'
           });
-    },
-    function(uiGmapGoogleMapApiProvider) {
-    uiGmapGoogleMapApiProvider.configure({
-        key: 'AIzaSyAFE5936R9ePoVXnhYsb8DdFov77MwseGs',
-        v: '3.20', //defaults to latest 3.X anyhow
-        libraries: 'weather,geometry,visualization'
-    }) }
+    }
     );
 
 })();

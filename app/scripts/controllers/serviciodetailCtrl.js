@@ -1,13 +1,8 @@
    angular.module('iServifast')
-    .controller('serviciodetailCtrl', function($scope, uiGmapGoogleMapApi, servicioService,$routeParams, $http,helpService){
+    .controller('serviciodetailCtrl', function($scope, servicioService,$routeParams, $http,helpService){
         $scope.servicio =[];
         $scope.loaded= false; 
-                $scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
-                $scope.options = {scrollwheel: false};
-         uiGmapGoogleMapApi.then(function(maps){
-                $scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
-                $scope.options = {scrollwheel: false};
-         })
+                
         $scope.form = {
                     nota:""
                 }
