@@ -34,7 +34,7 @@
         },
 
     check:function(){
-    var aux=sessionStorage.getItem("uid");      
+    var aux=sessionStorage.getItem('uid');      
         if (aux){
           return true;
         }
@@ -53,7 +53,7 @@
 
     },
     check3:function(){
-    var aux=sessionStorage.getItem("uestado");      
+    var aux=sessionStorage.getItem('uestado');      
         if (aux.equals("1")){
           return false;
         }

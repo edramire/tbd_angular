@@ -34,9 +34,9 @@ angular.module('iServifast')
             var request= $http({
                          method: 'POST',
                         url: 'http://104.236.79.2:8181/Servifast/Voto/crear',
-                        data: {"idu": sessionStorage.getItem("uid"),
-                               "ids": servicioId,
-                               "nota":nota},
+                        data: {"usuario_idUsuario":sessionStorage.getItem("uid"),
+                               "servicio_idServicio":servicioId,
+                               "calificacion":nota},
                         headers: {'Content-Type': 'application/json'}
                         });
                 return (request);

@@ -29,8 +29,7 @@
 
                 <a href="#/Servicio/{{servicio.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
                     <div ng-if="!check3()">
-                    <a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
-                    <a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+                    <a class="btn btn--m btn--orange btn--flat" href="#/editar_servicio/{{servicio.idServicio}}"lx-ripple>Editar</a>
                     </div>
             <div class="p+">
                 <span class="fs-subhead tc-black-2 display-block">{{servicio.precio}}</span>

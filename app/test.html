@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html ng-app="iServifast">
 <head>
@@ -59,14 +58,11 @@
       <a href="#/Solicitud">Solicitudes</a>
     </div>        
     <div flex-item="1" ng-hide="!check()">
-      <a href="#/TusServicios">Tus servicios</a>
+      <a href="#/tusservicios">Tus servicios</a>
     </div>
 
     <div flex-item="1" ng-hide="!check()">
       <a href="#/Favoritos">Favoritos</a>
-    </div>
-    <div flex-item="1" ng-hide="!check()" ng-click="logout()">
-      <a href="#/home">Logout</a>
     </div>
     
 </nav>
@@ -89,7 +85,6 @@
   <script src="scripts/dirDisqus.js"></script>
   <script src="scripts/lumx.js"></script>
   <script src="scripts/ng-imgur.js"></script>
-  <script src="scripts/controllers/edit_servicioCtrl.js"></script>
   <script src="scripts/controllers/favoritoCtrl.js"></script>
   <script src="scripts/controllers/homeCtrl.js"></script>
   <script src="scripts/controllers/logCtrl.js"></script>

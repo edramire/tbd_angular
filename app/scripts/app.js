@@ -19,6 +19,12 @@
             templateUrl: 'HTML/crear-cuenta.html',
             controller: 'registroCtrl'
           })
+
+        .when('/editar_servicio/:servicioId',{
+            templateUrl: 'views/edit_servicio.html',
+            controller: 'edit_servicioCtrl.js'
+        })
+
         .when('/Solicitud', {
             templateUrl: 'views/solicitud.html',
             controller: 'solicitudCtrl'
@@ -48,7 +54,7 @@
             templateUrl: 'views/solicituddetalle.html',
             controller: 'solicituddetalleCtrl'
           })
-        .when('/tusservicios',{
+        .when('/TusServicios',{
             templateUrl: 'views/userservices.html',
             controller: 'servicioUSERCtrl'
         })
