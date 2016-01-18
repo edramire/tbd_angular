@@ -1,0 +1,119 @@
+<div ng-app="iServifast" ng-controller="solicitudCtrl">
+
+
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<lx-tabs>
+	<lx-tab heading="Solicitud">
+		<div flex-item="6">
+        <div class="card" ng-repeat="solicitud in solicitudes">
+
+            <div class="card__actions">
+            <div class="card__img card__img--top">
+                <img ng-src="{{solicitud.imagen}}" width="450">
+                <span class="fs-headline tc-white-1 display-block">{{solicitud.titulo}}</span>
+            </div>
+
+                <a href="#/Solicitud/{{solicitud.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
+                    <a class="btn btn--m btn--orange btn--flat" lx-ripple>Editar</a>
+                    <a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
+                    </div>
+            <div class="p+">
+                <span class="fs-subhead tc-black-2 display-block">{{solicitud.precio}}</span>
+
+                <div class="paragraph fs-body-1">
+                    <p>
+                        {{solicitud.descripcion}}
+                    </p>
+                </div>
+
+            </div>
+            </div>
+
+        </div>
+    </div>
+	</lx-tab>
+    <div ng-if="check()">
+	<lx-tab heading="Crear Solicitud">
+	<form ng-submit="addPost()">
+    	<div class="mt++ ng-scope" flex-container="row" flex-glutter="24">
+    		<div flex-item>
+				<div class="p+">
+					<div class="card top-space">
+						<div class="p+">
+							<label for="singleSelect"> Categoria: </label>
+						    <select name="singleSelect" ng-model="oferta.CAT">
+						      <option value="1">Educativo</option>
+						      <option value="2">Hospedaje</option>
+						      <option value="3">Transporte</option>
+						      <option value="4">Tecnico</option>
+						      <option value="5">Salud</option>
+						      <option value="6">Seguridad</option>
+						      <option value="7">Domestico</option>
+						      <option value="8">Vestuario</option>
+						      <option value="9">Mascotas</option>
+						      <option value="10">Jardineria</option>
+						      <option value="11">Asistencia tecnica</option>
+						    </select></br></br>
+						    <label for="singleSelect"> Comunidad: </label>
+						    <select name="singleSelect" ng-model="oferta.COM">
+						      <option value="1">Villa Portales</option>
+						      <option value="2">Villa Los Héroes</option>
+						      <option value="3">Villa O'Higgins</option>
+						      <option value="4">Barrio Estoril</option>
+						      <option value="5">Villa Olímpica</option>
+						      <option value="6">Barrio Cottolengo</option>
+						      <option value="7">Villa Macul</option>
+						      <option value="8">Barrio Los Quillayes</option>
+						      <option value="9">Barrio Manuel Montt</option>
+						      <option value="10">Barrio Los Leones</option>
+						      <option value="11">Barrio Lo Curro tecnica</option>			<option value="12">Barrio Ossandon</option>
+						      <option value="13">Villa Frei</option>
+						      <option value="14">Barrio Argentina</option>
+						      <option value="15">Barrio Toesca</option>
+
+						    </select>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Titulo">
+									<input type="text" ng-model="form.titulo">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Descripcion">
+									<input type="text" ng-model="form.descripcion">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Precio">
+									<input type="text" ng-model="form.precio">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div flex-container="row">
+								<div flex-item>
+									<lx-text-field label="Duracion">
+									<input type="text" ng-model="form.duracion">
+									</lx-text-field>	
+								</div>	
+							</div>
+							<div class="card__actions">
+								<button type="submit" class="btn btn--red btn--l btn--raised">
+								Guardar
+								</button>
+							</div>
+						</div>			
+					</div>
+				</div>
+			</div>
+    	</div>
+	</form>
+	</lx-tab>
+	</div>
+</lx-tabs>
+</div>

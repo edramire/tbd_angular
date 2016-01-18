@@ -1,5 +1,11 @@
 <div ng-app="iServifast" ng-controller="serviciodetailCtrl">
-    
+ <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+
+<div id="map_canvas">
+    <ui-gmap-google-map center="map.center" zoom="map.zoom" options="options"></ui-gmap-google-map>
+</div>
 	<div class="mt++ ng-scope"  flex-container="row" flex-gutter="42">
 <div class="md-col-10">
     	<div flex-item="20" flex-item-order="1">
@@ -31,6 +37,7 @@
         </div>
 		</div>
     </div>
+    <div class="col-md-1"></div>
     <div class="md-col-4">
     <form ng-submit="addVoto()">
     	<div flex-item="4" flex-item-order="2">
@@ -70,7 +77,7 @@
   <div ng-if="check()">
     <div class="content-center">
     <div class="col-lg-10 col-centered">
-    </br></br></br></br></br></br></br></br>
+    </br></br></br></br></br></br>
     <dir-disqus disqus-shortname="iservifast"
             disqus-identifier="{{servicio.idServicio}}"
             disqus-title="{{servicio.titulo}}"
@@ -80,6 +87,7 @@
             ready-to-bind="{{ loaded }}"
             >
 </dir-disqus>
+
     </div>
     </div>
     </div>

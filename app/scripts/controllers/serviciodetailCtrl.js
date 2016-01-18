@@ -1,26 +1,17 @@
    angular.module('iServifast')
-    .controller('serviciodetailCtrl', function($scope, servicioService,$routeParams, $http,helpService){
+    .controller('serviciodetailCtrl', function($scope, uiGmapGoogleMapApi, servicioService,$routeParams, $http,helpService){
         $scope.servicio =[];
-        $scope.loaded= false;
+        $scope.loaded= false; 
+                $scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
+                $scope.options = {scrollwheel: false};
+         uiGmapGoogleMapApi.then(function(maps){
+                $scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
+                $scope.options = {scrollwheel: false};
+         })
         $scope.form = {
                     nota:""
                 }
-                function RatingController() {
-    this.rating1 = 5;
-    this.rating2 = 2;
-    this.isReadonly = true;
-    this.rateFunction = function(rating) {
-      console.log('Rating selected: ' + rating);
-    };
-  }
-
-  $scope.ratings = [{
-        current: 5,
-        max: 10
-    }, {
-        current: 3,
-        max: 5
-    }];
+               
         function getServicioDetail(){
             servicioService.getServicioDetail($routeParams.servicioId)
             .success(function(data){

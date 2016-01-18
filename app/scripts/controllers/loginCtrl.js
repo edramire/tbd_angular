@@ -1,5 +1,17 @@
  angular.module('iServifast').controller('loginCtrl',function($http, $location,$scope,helpService){
 	 	
+        $scope.usuario ={};
+
+        function getUsers(){
+        var $promise =$http({ 
+
+            method: "GET",
+            url: "http://104.236.79.2:8181/Servifast/Usuario/"+sessionStorage.getItem("uid"),
+            }).success(function(data,status,headers,config){  
+                $scope.usuario=data;
+              console.log(data);
+            })
+    };	
 		$scope.login=function(){
 			var $promise=$http({
                 method: 'POST',
@@ -11,7 +23,6 @@
 
 				if($scope.user.usuario){
 					sessionStorage.setItem('unombre',$scope.user.usuario);
-					sessionStorage.setItem('uestado',helpService.check2($scope.user.usuario));
 					$location.path('/home');
 				}	       
 				else  {
@@ -26,6 +37,7 @@
 
             });
 		}
+
 
 	
 

@@ -8,7 +8,8 @@
                 headers: {'Content-Type': 'application/json'}
         }).success(function(data,status,headers,config){  
               console.log(data);                
-              sessionStorage.setItem('uid',data);            
+              sessionStorage.setItem('uid',data);
+                          
 
             },
             function(error,status,headers,config){
@@ -29,10 +30,11 @@
         }
     },
     check2:function(nombre){
-      var id= $http({
+      var $promise=$http({
                 method: 'GET',
                 url: 'http://104.236.79.2:8181/Servifast/Usuario/estado/'+nombre
         }).success(function(data,status,headers,config){  
+              var id=data;
               console.log(data);});
         return id;
 

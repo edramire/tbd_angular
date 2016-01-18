@@ -1,5 +1,7 @@
 (function(){
     angular.module('iServifast').controller('logCtrl', function($scope, $http,$location){
+      
+        $scope.usuario =[];
       $scope.addLog = function (){
       $http({
                 method: 'POST',
@@ -24,6 +26,16 @@
             });
 
         }
+        function getUsers(){
+        var $promise =$http({ 
+
+            method: "GET",
+            url: "http://104.236.79.2:8181/Servifast/Usuario/"+sessionStorage.getItem("uid"),
+            }).success(function(data,status,headers,config){  
+                $scope.usuario=data;
+              console.log(data);
+            })
+    };   
     });
     
   } ) ();

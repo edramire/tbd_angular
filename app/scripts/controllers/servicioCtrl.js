@@ -55,7 +55,7 @@
 
     $scope.check3=function(){
     var aux=sessionStorage.getItem("uestado");      
-        if (angular.equals(aux,"1")){
+        if (angular.equals(aux,"0")){
           return false;
         }
         else{
