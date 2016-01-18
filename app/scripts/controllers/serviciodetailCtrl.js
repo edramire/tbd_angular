@@ -20,6 +20,7 @@
         }
         getServicioDetail();
 
+
         function addVoto(nota){
             servicioService.addVoto($routeParams.servicioId,nota)
             .success(function(data){
