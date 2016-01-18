@@ -3,9 +3,6 @@
           	
         helpService.login2();
 
-      	$scope.user = sessionStorage.getItem("unombre");      	 
-      	$scope.id1=sessionStorage.getItem("uid");
-      	$scope.estado=sessionStorage.getItem("uestado");
     });
     
   } ) ();
