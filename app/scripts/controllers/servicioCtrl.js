@@ -53,9 +53,9 @@
         },
 
 
-    $scope.check3=function(){
+     $scope.check3=function(){
     var aux=sessionStorage.getItem("uestado");      
-        if (angular.equals(aux,"0")){
+        if (angular.equals(aux,"1")){
           return false;
         }
         else{

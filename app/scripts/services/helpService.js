@@ -17,6 +17,19 @@
 
             });
 
+      var estado=$http({
+                method: 'GET',
+                url: 'http://104.236.79.2:8181/Servifast/Usuario/estado/'+nombre
+        }).success(function(data,status,headers,config){  
+              console.log(data);           
+              sessionStorage.setItem('uestado',data.conectado);
+                          
+
+            },
+            function(error,status,headers,config){
+
+
+            });
 
         },
 
@@ -34,7 +47,7 @@
                 method: 'GET',
                 url: 'http://104.236.79.2:8181/Servifast/Usuario/estado/'+nombre
         }).success(function(data,status,headers,config){  
-              var id=data;
+              var id=data.estado;
               console.log(data);});
         return id;
 

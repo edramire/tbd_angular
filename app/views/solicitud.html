@@ -12,7 +12,6 @@
             <div class="card__actions">
             <div class="card__img card__img--top">
                 <img ng-src="{{solicitud.imagen}}" width="450">
-                <span class="fs-headline tc-white-1 display-block">{{solicitud.titulo}}</span>
             </div>
 
                 <a href="#/Solicitud/{{solicitud.idServicio}}" class="btn btn--m btn--blue btn--flat" lx-ripple>Mas</a>
@@ -21,13 +20,15 @@
                     <a class="btn btn--m btn--red btn--flat" lx-ripple>Eliminar</a>
                     </div>
             <div class="p+">
-                <span class="fs-subhead tc-black-2 display-block">{{solicitud.precio}}</span>
 
+                <span class="fs-headline tc-black-1 display-block">{{solicitud.titulo}}</span>                
                 <div class="paragraph fs-body-1">
                     <p>
                         {{solicitud.descripcion}}
                     </p>
                 </div>
+                <span class="fs-subhead tc-black-2 display-block">Precio: ${{solicitud.precio}}</span>
+
 
             </div>
             </div>
